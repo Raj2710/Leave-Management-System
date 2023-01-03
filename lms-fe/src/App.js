@@ -3,12 +3,11 @@ import AdminDashboard from './components/AdminDashboard';
 import ApplyLeave from './components/ApplyLeave';
 import LeaveDetails from './components/LeaveDetails';
 import Login from './components/Login';
-import NavBar from './components/NavBar';
 import UserDashboard from './components/UserDashboard';
+import { ToastContainer } from 'react-toastify';
 function App() {
   return <>
     <BrowserRouter>
-      <NavBar/>
       <Routes>
         <Route path='/login' element={<Login/>}/>
         <Route path='/admin-dashboard' element={<AdminDashboard/>}/>
@@ -17,6 +16,9 @@ function App() {
         <Route path='/leave/:id' element={<LeaveDetails/>}/>
         <Route path='*' element={<Navigate to='/login'/>}/>
       </Routes>
+      <ToastContainer 
+      autoClose={1000}
+      />
     </BrowserRouter>
   </>
 }
